@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Futures Spring Boot - Angularjs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/js/controller.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+</head>
+<body>
+
+<div class="container" ng-app="app">
+
+    <h3 style="color:blue">Futures Info Service</h3>
+
+    <div ng-controller="postcontroller">
+        <form class="form-horizontal" name="customerForm" ng-submit="submitForm()">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="futuresGroupID">Futures Group:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="futuresGroup" id="futuresGroupID"
+                           placeholder="Enter Futures Group" ng-model="futuresGroup"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="futuresMarginID">Futures Margin:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="futuresMargin" id="futuresMarginID"
+                           placeholder="Enter Futures Margin" ng-model="futuresMargin"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="futuresNameID">Futures Name:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="futuresName" id="futuresNameID"
+                           placeholder="Enter Futures Name" ng-model="futuresName"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="futuresSymbolID">Futures Symbol:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="futuresSymbol" id="futuresSymbolID"
+                           placeholder="Enter Futures Symbol" ng-model="futuresSymbol"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="col-sm-offset-2 col-sm-10">
+            <p>{{postResultMessage}}</p>
+        </div>
+    </div>
+
+    <div class="col-sm-offset-2 col-sm-10" ng-controller="getcontroller">
+        <button id="btn-id" type="button" class="btn btn-primary" ng-click="getfunction()">Get All Futures</button>
+        <ul>
+            <li ng-repeat="fut in response">{{fut.futuresGroup + " " + fut.futuresMargin + " " + fut.futuresName + " "
+                + fut.futuresSymbol}}</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
