@@ -1,4 +1,5 @@
 var app = angular.module('app', []);
+
 app.controller('postcontroller', function($scope, $http, $location) {
     $scope.submitForm = function(){
         var url = $location.absUrl() + "futures/create";
@@ -38,4 +39,29 @@ app.controller('getcontroller', function($scope, $http, $location) {
             //$scope.postResultMessage = "Error with status: " +  response.statusText;
         });
     }
+});
+
+app.controller('getaffordablecontroller', function($scope, $http, $location) {
+    $scope.getfunction = function(){
+        var url = $location.absUrl() + "futures/affordable/" + 100;
+
+        $http.get(url).then(function (response) {
+            $scope.response = response.data
+            //}, function error(response) {
+            //$scope.postResultMessage = "Error with status: " +  response.statusText;
+        });
+    }
+});
+
+app.controller('postdeletecontroller', function($scope, $http, $location) {
+    $scope.getfunction = function(){
+        var url = $location.absUrl() + "futures/delete/" + id;
+
+        $http.get(url).then(function (response) {
+            $scope.response = response.data
+            //}, function error(response) {
+            //$scope.postResultMessage = "Error with status: " +  response.statusText;
+        });
+    }
+
 });

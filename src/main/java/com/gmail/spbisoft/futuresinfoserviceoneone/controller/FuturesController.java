@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/futures")
 public class FuturesController {
@@ -37,5 +39,4 @@ public class FuturesController {
 
         return futuresRepository.findAll();
     }
-
 }

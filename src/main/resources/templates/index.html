@@ -67,6 +67,25 @@
         </ul>
     </div>
 
+    <div class="col-sm-offset-2 col-sm-10" ng-controller="getaffordablecontroller">
+        <button id="btn2-id" type="button" class="btn btn-primary" ng-click="getfunction()">Get By Margin</button>
+        <ul>
+            <li ng-repeat="fut in response">{{fut.futuresGroup + " " + fut.futuresMargin + " " + fut.futuresName + " "
+                + fut.futuresSymbol}}</li>
+        </ul>
+    </div>
+
+    <div class="col-sm-offset-2 col-sm-10" ng-controller="postdeletecontroller">
+        <button id="btn3-id" type="button" class="btn btn-primary" ng-click="getfunction()">Delete</button>
+        <ul>
+            <li ng-repeat="fut in response">{{fut.futuresGroup + " " + fut.futuresMargin + " " + fut.futuresName + " "
+                + fut.futuresSymbol}}</li>
+        </ul>
+    </div>
+
+
+
+
 </div>
 </body>
 </html>
