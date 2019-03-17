@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4201")
 @RestController
 @RequestMapping(value = "/futures")
 public class FuturesController {
@@ -33,7 +33,7 @@ public class FuturesController {
         return futuresRepository.findByFuturesMarginLessThan(margin);
     }
 
-    @PostMapping(value = "/delete/{id}")
+    @DeleteMapping(value = "/delete/{id}")
     public List<FuturesModel> remove(@PathVariable int id) {
         futuresRepository.deleteById(id);
 
